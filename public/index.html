@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+  <title>Electron Smaple - config</title>
+  <style>
+    body{ background-color:white; }
+  </style>
+</head>
+<body>
+
+<h1>ウィンドウの状態を記録</h1>
+<p>アプリが終了した瞬間のウィンドウの位置とサイズを記録し、次回起動時に復元します。</p>
+
+<button type="button" id="btn-reset">リセット</button>
+<script>
+  const {ipcRenderer} = require('electron');
+
+  document.querySelector('#btn-reset').addEventListener('click', () => {
+    // メインプロセスを呼び出し
+    ipcRenderer.invoke('window-reset')
+      .then((result) => {
+        if(!result){
+          alert('リセットに失敗しました');
+        }
+      })
+  });
+</script>
+</body>
+</html>
