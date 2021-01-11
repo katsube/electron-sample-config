@@ -1,7 +1,8 @@
 # Electron Sample - config
+electron-storeを利用し閉じる直前のウィンドウの位置とサイズをローカルのファイルへ記録、次回起動する際に復元するサンプルです。
 
 ## 解説ページ
-* []()
+* [[Electron] 設定情報をローカルファイルに簡単保存 – electron-store](https://blog.katsubemakito.net/nodejs/electron/electron-store)
 
 ## 準備
 Gitでリポジトリを取得します。
